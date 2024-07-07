@@ -12,7 +12,7 @@ on:
 jobs:
   ci-workflow:
     name: Run CI workflow for the Application
-    uses: ./.github/workflows/frontend-ci.yaml
+    uses: .github/workflows/frontend-ci.yaml
     with:
       appName: portfolio-react-app
     secrets: inherit
@@ -20,11 +20,11 @@ jobs:
   dev-deploy:
     name: Deploy Dev Environment for the Application
     needs: [ci-workflow]
-    uses: ./.github/workflows/deploy.yaml
+    uses: .github/workflows/deploy.yaml
     with:
       environment: dev
 
   functional-tests:
     name: Run functional tests on the deployed Dev Environment
     needs: [dev-deploy]
-    uses: ./.github/workflows/functional-tests.yaml
+    uses: .github/workflows/functional-tests.yaml
