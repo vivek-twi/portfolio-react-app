@@ -12,9 +12,9 @@ on:
 jobs:
   ci-workflow:
     name: Run CI workflow for the Application
-    uses: ./.github/workflows/backend-ci.yaml
+    uses: ./.github/workflows/frontend-ci.yaml
     with:
-      appName: vo-bff-springboot
+      appName: portfolio-react-app
     secrets: inherit
 
   dev-deploy:
